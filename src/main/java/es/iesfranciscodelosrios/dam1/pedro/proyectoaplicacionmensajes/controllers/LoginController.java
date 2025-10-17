@@ -62,8 +62,10 @@ public class LoginController {
 
         if (valido) {
             Usuario usuario = usuarioRepo.buscarUsuario(user);
+            // Actualizar la última sesión del usuario
+            usuarioRepo.actualizarUltimaSesion(user);
             abrirPantallaPrincipal(usuario);
-        }else {
+        } else {
             showAlert("Error", "Usuario o contraseña incorrectos", Alert.AlertType.ERROR);
         }
     }

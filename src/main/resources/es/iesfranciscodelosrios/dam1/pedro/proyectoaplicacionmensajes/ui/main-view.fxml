@@ -22,30 +22,41 @@
 
     <!-- Zona central: menú / contenido principal -->
     <center>
-        <VBox fx:id="panelCentral" alignment="CENTER" spacing="10">
-            <!-- Menú inicial -->
+        <StackPane fx:id="panelCentral">
+
+            <!-- Menú inicial (centrado mientras no haya chat) -->
             <VBox fx:id="menuInicial" alignment="CENTER" spacing="20">
                 <Label styleClass="login-title" text="Menú principal" />
                 <Button fx:id="btnAgregarContacto" onAction="#handleAgregarContacto" styleClass="btn-success" text="Agregar contacto" />
             </VBox>
 
-            <!-- Chat oculto -->
-            <VBox fx:id="chatBox" managed="false" spacing="10" visible="false">
-                <ScrollPane fx:id="scrollChat" fitToHeight="true" VBox.vgrow="ALWAYS">
-                    <VBox fx:id="chatMensajes" spacing="5" />
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </VBox.margin>
-                </ScrollPane>
-                <HBox spacing="5">
-                    <TextField fx:id="txtMensaje" promptText="Escribe un mensaje..." HBox.hgrow="ALWAYS" />
-                    <Button fx:id="btnEnviar" text="Enviar" />
-                </HBox>
-            </VBox>
-        </VBox>
+            <!-- Chat: ocupa todo el espacio central -->
+            <BorderPane fx:id="chatBox" visible="false" managed="false">
+
+                <!-- Panel de mensajes (centro, con scroll) -->
+                <center>
+                    <ScrollPane fx:id="scrollChat" fitToWidth="true" fitToHeight="true" styleClass="message-area">
+                        <VBox spacing="10" fx:id="chatMensajes">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                        </VBox>
+                    </ScrollPane>
+                </center>
+
+                <!-- Barra inferior para escribir mensajes -->
+                <bottom>
+                    <HBox spacing="5" >
+                        <padding>
+                            <Insets bottom="10" left="10" right="10" top="10" />
+                        </padding>
+                        <TextField fx:id="txtMensaje" promptText="Escribe un mensaje..." HBox.hgrow="ALWAYS" styleClass="form-control" />
+                        <Button fx:id="btnEnviar" text="Enviar" styleClass="btn-success" />
+                    </HBox>
+                </bottom>
+
+            </BorderPane>
+        </StackPane>
     </center>
 
     <!-- Zona derecha: información del usuario / chat -->

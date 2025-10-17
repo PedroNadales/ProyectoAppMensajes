@@ -91,4 +91,14 @@ public class UsuarioRepository {
         Usuario u = buscarUsuario(username);
         return (u != null && u.getPassword().equals(password));
     }
+
+    // Actualizar la última sesión de un usuario
+    public void actualizarUltimaSesion(String username) {
+        Usuarios usuarios = leerUsuarios();
+        Usuario usuario = usuarios.buscarPorUsername(username);
+        if (usuario != null) {
+            usuario.setUltimaSesion(java.time.LocalDateTime.now());
+            guardarUsuarios(usuarios);
+        }
+    }
 }

@@ -97,3 +97,11 @@
     -fx-background-color: linear-gradient(to bottom right, #1e1e2f, #2d3a2f);
 }
 
+/* Área de mensajes */
+.message-area {
+    -fx-background-color: #2e2e3e;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-text-fill: white;
+}
+

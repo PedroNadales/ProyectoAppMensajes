@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<conversaciones>
+    <mensaje>
+        <id>690470ae-fc54-4363-86f3-73f0e859c56e</id>
+        <remitente>admin</remitente>
+        <destinatario>admin</destinatario>
+        <texto>hola</texto>
+        <timestamp>2025-10-17T19:03:43.3470728</timestamp>
+    </mensaje>
+    <mensaje>
+        <id>895c6f35-6e1d-465a-a889-a377de19d3ef</id>
+        <remitente>admin</remitente>
+        <destinatario>Pedroo</destinatario>
+        <texto>¡hola!</texto>
+        <timestamp>2025-10-17T19:04:23.2982162</timestamp>
+    </mensaje>
+    <mensaje>
+        <id>46079891-bf05-41fc-bf26-722f5c89347e</id>
+        <remitente>Pedroo</remitente>
+        <destinatario>admin</destinatario>
+        <texto>hola :)</texto>
+        <timestamp>2025-10-17T19:05:52.6397751</timestamp>
+    </mensaje>
+    <mensaje>
+        <id>72c7e881-24a8-480f-8865-db65b470f272</id>
+        <remitente>admin</remitente>
+        <destinatario>admin</destinatario>
+        <texto>prueba</texto>
+        <timestamp>2025-10-17T19:22:28.6130312</timestamp>
+    </mensaje>
+    <mensaje>
+        <id>bc986a56-32af-4a5d-b187-c0a23e802363</id>
+        <remitente>admin</remitente>
+        <destinatario>Pedroo</destinatario>
+        <texto>prueba</texto>
+        <timestamp>2025-10-17T19:22:41.5167798</timestamp>
+    </mensaje>
+</conversaciones>

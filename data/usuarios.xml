@@ -7,7 +7,7 @@
         <nombreCompleto>Administrador</nombreCompleto>
         <email>admin@example.com</email>
         <fechaRegistro>2025-10-16T20:25:12.5139019</fechaRegistro>
-        <ultimaSesion>2025-10-16T20:25:12.5159568</ultimaSesion>
+        <ultimaSesion>2025-10-17T19:22:07.8219582</ultimaSesion>
         <fotoPath>/assets/default-avatar.png</fotoPath>
     </usuario>
     <usuario>
@@ -17,7 +17,7 @@
         <nombreCompleto>Pedro Nadales</nombreCompleto>
         <email>pedro@gmail.com</email>
         <fechaRegistro>2025-10-16T20:25:36.2270062</fechaRegistro>
-        <ultimaSesion>2025-10-16T20:25:36.2270062</ultimaSesion>
+        <ultimaSesion>2025-10-17T19:11:00.333581</ultimaSesion>
         <fotoPath>/assets/default-avatar.png</fotoPath>
     </usuario>
 </usuarios>

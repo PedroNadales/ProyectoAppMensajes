@@ -12,31 +12,48 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Collection;
 
 public class MainController {
 
-    @FXML private ListView<Usuario> listaUsuarios;
-    @FXML private VBox panelDerecho;
-    @FXML private VBox panelCentral;
-    @FXML private Label lblTituloPanelDerecho;
-    @FXML private Label lblNombreUsuario;
-    @FXML private Label lblEmail;
-    @FXML private Button btnAgregarContacto;
-    @FXML private ImageView imgPerfil;
-    @FXML private Label lblFechaRegistro;
-    @FXML private Label lblUltimaSesion;
-    @FXML private VBox menuInicial;
-    @FXML private VBox chatBox;
-    @FXML private VBox chatMensajes;
-    @FXML private TextField txtMensaje;
-    @FXML private Button btnEnviar;
-
+    @FXML
+    private ListView<Usuario> listaUsuarios;
+    @FXML
+    private VBox panelDerecho;
+    @FXML
+    private StackPane panelCentral;
+    @FXML
+    private Label lblTituloPanelDerecho;
+    @FXML
+    private Label lblNombreUsuario;
+    @FXML
+    private Label lblEmail;
+    @FXML
+    private Button btnAgregarContacto;
+    @FXML
+    private ImageView imgPerfil;
+    @FXML
+    private Label lblFechaRegistro;
+    @FXML
+    private Label lblUltimaSesion;
+    @FXML
+    private VBox menuInicial;
+    @FXML
+    private BorderPane chatBox;
+    @FXML
+    private VBox chatMensajes;
+    @FXML
+    private TextField txtMensaje;
+    @FXML
+    private Button btnEnviar;
 
 
     private final UsuarioRepository repo = new UsuarioRepository();
@@ -62,10 +79,7 @@ public class MainController {
                 imageView.setClip(new Circle(20, 20, 20));
 
                 lblNombre = new Label();
-                lblNombre.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
-
                 lblEmail = new Label();
-                lblEmail.setStyle("-fx-text-fill: gray; -fx-font-size: 12px;");
 
                 vbox = new VBox(lblNombre, lblEmail);
                 vbox.setSpacing(2);
@@ -102,7 +116,6 @@ public class MainController {
                 }
             }
         });
-
 
 
         // Mostrar la info del usuario al hacer clic
@@ -145,21 +158,69 @@ public class MainController {
     private void mostrarInfoUsuario(Usuario u) {
         // Ocultar el título si no es tu perfil
         if (u.equals(usuarioActual)) {
-            lblTituloPanelDerecho.setVisible(true); // o setOpacity(1)
+            lblTituloPanelDerecho.setVisible(true);
         } else {
-            lblTituloPanelDerecho.setVisible(false); // o setOpacity(0)
+            lblTituloPanelDerecho.setVisible(false);
         }
         lblNombreUsuario.setText("Chat con: " + u.getNombreCompleto());
         lblEmail.setText("Email: " + u.getEmail());
-            // Cargar chat en el panel central
+        
+        // Mostrar la última sesión si está disponible
+        if (u.getUltimaSesion() != null) {
+            lblUltimaSesion.setText("Última sesión: " + 
+                String.format("%02d/%02d/%04d %02d:%02d", 
+                    u.getUltimaSesion().getDayOfMonth(), 
+                    u.getUltimaSesion().getMonthValue(), 
+                    u.getUltimaSesion().getYear(), 
+                    u.getUltimaSesion().getHour(), 
+                    u.getUltimaSesion().getMinute()));
+        } else {
+            lblUltimaSesion.setText("Última sesión: Nunca");
+        }
+        // Cargar chat en el panel central
         // Mostrar chat
         if (!u.equals(usuarioActual)) {
             menuInicial.setVisible(false);
             menuInicial.setManaged(false);
-
             chatBox.setVisible(true);
             chatBox.setManaged(true);
-            chatMensajes.getChildren().clear(); // Limpiar chat si quieres
+            chatMensajes.getChildren().clear(); // Limpiar chat
+
+            // Guardar el usuario destino para el chat
+            Usuario usuarioDestino = u;
+
+            // Cargar conversación desde XML
+            var repoConversaciones = new es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.persistence.MensajesRepository();
+            var mensajes = repoConversaciones.obtenerConversacion(usuarioActual.getUsername(), usuarioDestino.getUsername());
+
+            // Mostrar mensajes en el VBox del chat
+            mensajes.forEach(m -> {
+                Label lblMsg = new Label(m.getRemitente() + ": " + m.getTexto());
+                lblMsg.setWrapText(true);
+                chatMensajes.getChildren().add(lblMsg);
+            });
+            // Configurar botón enviar
+            btnEnviar.setOnAction(event -> {
+                String texto = txtMensaje.getText().trim();
+                if (!texto.isEmpty()) {
+                    // Crear y guardar mensaje
+                    var mensaje = new es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.model.Mensaje(
+                            usuarioActual.getUsername(),
+                            usuarioDestino.getUsername(),
+                            texto,
+                            null  // No hay archivo adjunto
+                    );
+                    repoConversaciones.agregarMensaje(mensaje);
+
+                    // Mostrarlo en pantalla
+                    Label lblMsg = new Label("Tú: " + texto);
+
+                    chatMensajes.getChildren().add(lblMsg);
+
+                    txtMensaje.clear();
+                }
+            });
+
         } else {
             menuInicial.setVisible(true);
             menuInicial.setManaged(true);
@@ -167,6 +228,7 @@ public class MainController {
             chatBox.setVisible(false);
             chatBox.setManaged(false);
         }
+
     }
 
 
