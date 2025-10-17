@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<usuarios>
+    <usuario>
+        <id>633d4ca4-e5ee-48c7-8f7f-a968e7aae634</id>
+        <username>admin</username>
+        <password>1234</password>
+        <nombreCompleto>Administrador</nombreCompleto>
+        <email>admin@example.com</email>
+        <fechaRegistro>2025-10-16T20:25:12.5139019</fechaRegistro>
+        <ultimaSesion>2025-10-16T20:25:12.5159568</ultimaSesion>
+        <fotoPath>/assets/default-avatar.png</fotoPath>
+    </usuario>
+    <usuario>
+        <id>ea0f54b5-1a01-4e8f-a941-d6dd61cf7691</id>
+        <username>Pedroo</username>
+        <password>1234</password>
+        <nombreCompleto>Pedro Nadales</nombreCompleto>
+        <email>pedro@gmail.com</email>
+        <fechaRegistro>2025-10-16T20:25:36.2270062</fechaRegistro>
+        <ultimaSesion>2025-10-16T20:25:36.2270062</ultimaSesion>
+        <fotoPath>/assets/default-avatar.png</fotoPath>
+    </usuario>
+</usuarios>

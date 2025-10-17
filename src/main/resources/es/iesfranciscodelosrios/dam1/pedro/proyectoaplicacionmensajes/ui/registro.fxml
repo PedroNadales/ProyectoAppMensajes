@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane styleClass="bg-dark"
+           xmlns="http://javafx.com/javafx/17.0.12"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.controllers.RegistroController">
+
+    <VBox alignment="CENTER" spacing="20">
+        <children>
+            <!-- Caja principal de registro -->
+            <VBox alignment="CENTER" spacing="15" styleClass="login-box">
+                <children>
+
+                    <!-- Título -->
+                    <Label styleClass="login-title" text="Registro de Usuario"/>
+
+                    <!-- Campos -->
+                    <TextField fx:id="txtUsername" promptText="Nombre de usuario" maxWidth="250" styleClass="form-control"/>
+                    <PasswordField fx:id="txtPassword" promptText="Contraseña" maxWidth="250" styleClass="form-control"/>
+                    <TextField fx:id="txtNombreCompleto" promptText="Nombre completo" maxWidth="250" styleClass="form-control"/>
+                    <TextField fx:id="txtEmail" promptText="Correo electrónico" maxWidth="250" styleClass="form-control"/>
+
+                    <!-- Botones -->
+                    <Button fx:id="btnRegistrar" text="Registrar" onAction="#handleRegistro" maxWidth="250" styleClass="btn-success"/>
+                    <Button text="Volver al login" onAction="#volverLogin" maxWidth="250" styleClass="btn-success"/>
+
+                </children>
+            </VBox>
+        </children>
+    </VBox>
+</StackPane>

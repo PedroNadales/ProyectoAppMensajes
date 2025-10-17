@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane styleClass="bg-dark" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.controllers.MainController">
+
+    <!-- Zona izquierda: lista de usuarios -->
+    <left>
+        <VBox spacing="10" styleClass="sidebar">
+            <children>
+                <Label styleClass="sidebar-title" text="Contactos" />
+                <ListView fx:id="listaUsuarios" prefWidth="200" VBox.vgrow="ALWAYS" />
+            </children>
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+        </VBox>
+    </left>
+
+    <!-- Zona central: menú / contenido principal -->
+    <center>
+        <VBox fx:id="panelCentral" alignment="CENTER" spacing="10">
+            <!-- Menú inicial -->
+            <VBox fx:id="menuInicial" alignment="CENTER" spacing="20">
+                <Label styleClass="login-title" text="Menú principal" />
+                <Button fx:id="btnAgregarContacto" onAction="#handleAgregarContacto" styleClass="btn-success" text="Agregar contacto" />
+            </VBox>
+
+            <!-- Chat oculto -->
+            <VBox fx:id="chatBox" managed="false" spacing="10" visible="false">
+                <ScrollPane fx:id="scrollChat" fitToHeight="true" VBox.vgrow="ALWAYS">
+                    <VBox fx:id="chatMensajes" spacing="5" />
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+                </ScrollPane>
+                <HBox spacing="5">
+                    <TextField fx:id="txtMensaje" promptText="Escribe un mensaje..." HBox.hgrow="ALWAYS" />
+                    <Button fx:id="btnEnviar" text="Enviar" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- Zona derecha: información del usuario / chat -->
+    <right>
+        <VBox fx:id="panelDerecho" alignment="TOP_CENTER" spacing="15" styleClass="sidebar-right">
+            <children>
+                <!-- Imagen de perfil -->
+                <ImageView fx:id="imgPerfil" fitHeight="100" fitWidth="100" preserveRatio="true" />
+
+                <Label fx:id="lblTituloPanelDerecho" styleClass="sidebar-title" text="Tu perfil" />
+
+                <Label fx:id="lblNombreUsuario" styleClass="sidebar-right" text="Nombre: " />
+                <Label fx:id="lblEmail" styleClass="sidebar-right" text="Email: " />
+                <Label fx:id="lblFechaRegistro" styleClass="sidebar-right" text="Miembro desde: " />
+                <Label fx:id="lblUltimaSesion" styleClass="sidebar-right" text="Última sesión: " />
+            </children>
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+        </VBox>
+    </right>
+</BorderPane>

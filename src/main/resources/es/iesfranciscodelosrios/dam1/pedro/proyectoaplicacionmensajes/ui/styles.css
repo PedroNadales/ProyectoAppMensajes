@@ -1,0 +1,99 @@
+/* Fondo general */
+.bg-dark {
+    -fx-background-color: linear-gradient(to bottom right, #1f1f1f, #2d2d2d);
+}
+
+/* Caja del login */
+.login-box {
+    -fx-background-color: rgba(39,39,39,0.8);
+    -fx-background-radius: 20;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.15), 10, 0, 0, 0);
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-max-width: 320;
+}
+
+/* Título */
+.login-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Campos */
+.form-control {
+    -fx-background-radius: 10;
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.5);
+    -fx-border-color: transparent;
+    -fx-padding: 8 12;
+}
+
+.form-control:focused {
+    -fx-border-color: #4CAF50;
+    -fx-background-color: #444;
+}
+
+/* Botón */
+.btn-success {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+}
+
+.btn-success:hover {
+    -fx-background-color: #5dd165;
+}
+
+/* Texto pequeño */
+.small {
+    -fx-font-size: 11px;
+    -fx-text-fill: rgb(207, 255, 180);
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+/* Estilos para pantalla principal */
+
+/* Sidebar izquierda */
+.sidebar {
+    -fx-background-color: #2b2b3b;
+    -fx-background-radius: 0 10 10 0;
+}
+
+.sidebar-title {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* ListView de usuarios */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: #35354a;
+    -fx-text-fill: white;
+}
+
+/* Panel derecho */
+.sidebar-right {
+    -fx-background-color: #35354a;
+    -fx-background-radius: 10 0 0 10;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 1;
+    -fx-text-weight: bold;
+}
+
+/* Fondo principal */
+.bg-dark {
+    -fx-background-color: linear-gradient(to bottom right, #1e1e2f, #2d3a2f);
+}
+
