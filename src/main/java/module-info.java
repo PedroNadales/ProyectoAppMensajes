@@ -33,7 +33,7 @@ module es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes {
         javafx.fxml;
         
     // Open packages for reflection
-    opens es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.util to 
+    opens es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.utils to
         org.glassfish.jaxb.core, org.glassfish.jaxb.runtime, jakarta.xml.bind;
     
     // Export packages
@@ -42,7 +42,7 @@ module es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes {
     exports es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.model to 
         org.glassfish.jaxb.core, org.glassfish.jaxb.runtime, jakarta.xml.bind;
         
-    exports es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.util to 
+    exports es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.utils to
         org.glassfish.jaxb.core, org.glassfish.jaxb.runtime, jakarta.xml.bind;
     
     // Required for JavaFX

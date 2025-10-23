@@ -1,0 +1,22 @@
+/* Estilo para el mensaje de pantalla completa */
+.fullscreen-overlay {
+    -fx-background-color: transparent;
+}
+
+.fullscreen-overlay .label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px 10px;
+    -fx-background-color: rgba(0, 0, 0, 0.84);
+    -fx-background-radius: 0 0 5px 5px;
+    -fx-effect: dropshadow(gaussian, rgba(29, 193, 54, 0.91), 10, 0, 0, 2);
+    -fx-translate-y: 10px;
+    
+    /* Animación de desvanecimiento */
+    -fx-opacity: 1;
+    -fx-transition: -fx-opacity 0.5s ease-in-out;
+}
+
+.fullscreen-overlay .label.hidden {
+    -fx-opacity: 0;
+}

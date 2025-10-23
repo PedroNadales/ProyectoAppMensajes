@@ -25,20 +25,23 @@
         <StackPane fx:id="panelCentral">
 
             <!-- Menú inicial (centrado mientras no haya chat) -->
-            <VBox fx:id="menuInicial" alignment="CENTER" spacing="20">
+            <VBox fx:id="menuInicial" alignment="CENTER" spacing="15">
                 <Label styleClass="login-title" text="Menú principal" />
-                <Button fx:id="btnAgregarContacto" onAction="#handleAgregarContacto" styleClass="btn-success" text="Agregar contacto" />
+                <Button fx:id="btnAgregarContacto" onAction="#handleAgregarContacto" styleClass="btn-success" text="Agregar contacto" maxWidth="200" />
+                <Button fx:id="btnCambiarFoto" onAction="#handleCambiarFoto" styleClass="btn-success" text="Cambiar foto de perfil" maxWidth="200" />
+                <Button fx:id="btnCerrarSesion" onAction="#handleCerrarSesion" styleClass="btn-danger" text="Cerrar sesión" maxWidth="200" />
             </VBox>
 
             <!-- Chat: ocupa todo el espacio central -->
-            <BorderPane fx:id="chatBox" visible="false" managed="false">
+            <BorderPane fx:id="chatBox" managed="false" visible="false">
+
 
                 <!-- Panel de mensajes (centro, con scroll) -->
                 <center>
-                    <ScrollPane fx:id="scrollChat" fitToWidth="true" fitToHeight="true" styleClass="message-area">
-                        <VBox spacing="10" fx:id="chatMensajes">
+                    <ScrollPane fx:id="scrollChat" fitToHeight="true" fitToWidth="true" styleClass="message-area">
+                        <VBox fx:id="chatMensajes" spacing="10" styleClass="bg-dark">
                             <padding>
-                                <Insets top="10" right="10" bottom="10" left="10"/>
+                                <Insets bottom="10" left="10" right="10" top="10" />
                             </padding>
                         </VBox>
                     </ScrollPane>
@@ -46,12 +49,13 @@
 
                 <!-- Barra inferior para escribir mensajes -->
                 <bottom>
-                    <HBox spacing="5" >
+                    <HBox spacing="5">
                         <padding>
                             <Insets bottom="10" left="10" right="10" top="10" />
                         </padding>
-                        <TextField fx:id="txtMensaje" promptText="Escribe un mensaje..." HBox.hgrow="ALWAYS" styleClass="form-control" />
-                        <Button fx:id="btnEnviar" text="Enviar" styleClass="btn-success" />
+                        <TextField fx:id="txtMensaje" promptText="Escribe un mensaje..." styleClass="form-control" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnEnviar" styleClass="btn-success" text="Enviar" />
+                        <Button fx:id="btnAdjuntar" text="📎 Adjuntar" styleClass="btn-success" />
                     </HBox>
                 </bottom>
 
@@ -72,6 +76,25 @@
                 <Label fx:id="lblEmail" styleClass="sidebar-right" text="Email: " />
                 <Label fx:id="lblFechaRegistro" styleClass="sidebar-right" text="Miembro desde: " />
                 <Label fx:id="lblUltimaSesion" styleClass="sidebar-right" text="Última sesión: " />
+
+                <Separator prefWidth="200" />
+                <Button fx:id="btnResumen" text="Ver resumen"
+                        style="-fx-background-color: #27ba16; -fx-text-fill: white; -fx-font-weight: bold;"
+                        prefWidth="150" />
+                <VBox fx:id="boxResumen" spacing="5" visible="false" managed="false"
+                      style="-fx-background-color: rgba(255,255,255,0.84); -fx-padding: 10; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #27ba16;" />
+
+                <Button fx:id="btnExportar" text="Exportar conversación"
+                        style="-fx-background-color: #27ba16; -fx-text-fill: white; -fx-font-weight: bold;"
+                        prefWidth="200" />
+                <!-- Botón de volver al menú (esquina inferior derecha) -->
+                    <HBox alignment="BOTTOM_RIGHT" spacing="10">
+                        <padding>
+                            <Insets bottom="10" right="10" />
+                        </padding>
+                        <Button fx:id="btnVolverMenu" text="Volver al menú" onAction="#volverAlMenu" styleClass="btn-success" visible="false" managed="false" />
+                    </HBox>
+
             </children>
             <padding>
                 <Insets bottom="10" left="10" right="10" top="10" />

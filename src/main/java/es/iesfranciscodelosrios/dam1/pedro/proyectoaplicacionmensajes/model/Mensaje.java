@@ -1,6 +1,6 @@
 package es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.model;
 
-import es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.util.LocalDateTimeAdapter;
+import es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.utils.LocalDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -31,7 +31,17 @@ public class Mensaje {
     private LocalDateTime timestamp;
 
     @XmlElement
-    private String rutaAdjunto; // opcional (ruta dentro de media/)
+    private String rutaAdjunto; // (ruta dentro de media/)
+
+    @XmlElement
+    private String nombreAdjunto;
+
+    @XmlElement
+    private String tipoAdjunto;
+
+    @XmlElement
+    private long tamanoAdjunto;
+
 
     public Mensaje() {
     }
@@ -93,4 +103,29 @@ public class Mensaje {
     public void setRutaAdjunto(String rutaAdjunto) {
         this.rutaAdjunto = rutaAdjunto;
     }
+
+    public String getNombreAdjunto() {
+        return nombreAdjunto;
+    }
+
+    public void setNombreAdjunto(String nombreAdjunto) {
+        this.nombreAdjunto = nombreAdjunto;
+    }
+
+    public String getTipoAdjunto() {
+        return tipoAdjunto;
+    }
+
+    public void setTipoAdjunto(String tipoAdjunto) {
+        this.tipoAdjunto = tipoAdjunto;
+    }
+
+    public long getTamanoAdjunto() {
+        return tamanoAdjunto;
+    }
+
+    public void setTamanoAdjunto(long tamanoAdjunto) {
+        this.tamanoAdjunto = tamanoAdjunto;
+    }
+
 }

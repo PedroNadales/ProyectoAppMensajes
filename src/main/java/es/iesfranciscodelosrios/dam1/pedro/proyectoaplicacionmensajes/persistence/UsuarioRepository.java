@@ -81,6 +81,13 @@ public class UsuarioRepository {
         guardarUsuarios(usuarios);
     }
 
+    // Actualizar un usuario y guardar
+    public void actualizarUsuario(Usuario usuario) {
+        Usuarios usuarios = leerUsuarios();
+        usuarios.actualizarUsuario(usuario);
+        guardarUsuarios(usuarios);
+    }
+
     // Buscar usuario por username
     public Usuario buscarUsuario(String username) {
         return leerUsuarios().buscarPorUsername(username);

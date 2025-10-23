@@ -78,7 +78,7 @@ public class MensajesRepository {
         guardarConversaciones(conv);
     }
 
-    /** Recupera la conversación entre dos usuarios (ordenada por timestamp en ascendente) */
+    // Recupera la conversación entre dos usuarios (ordenada por timestamp en ascendente)
     public List<Mensaje> obtenerConversacion(String a, String b) {
         return leerTodas().getMensajes().stream()
                 .filter(m -> (m.getRemitente().equalsIgnoreCase(a) && m.getDestinatario().equalsIgnoreCase(b)) ||

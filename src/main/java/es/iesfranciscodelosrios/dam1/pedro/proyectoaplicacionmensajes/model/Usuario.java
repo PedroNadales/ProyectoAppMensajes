@@ -1,6 +1,6 @@
 package es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.model;
 
-import es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.util.LocalDateTimeAdapter;
+import es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.utils.LocalDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;

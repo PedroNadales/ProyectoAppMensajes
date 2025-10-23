@@ -41,7 +41,7 @@
 
 /* Botón */
 .btn-success {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: #27ba16;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-radius: 20;
@@ -50,6 +50,18 @@
 .btn-success:hover {
     -fx-background-color: #5dd165;
 }
+
+.btn-danger {
+    -fx-background-color: #c62828;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #d32f2f;
+}
+
 
 /* Texto pequeño */
 .small {
@@ -99,9 +111,10 @@
 
 /* Área de mensajes */
 .message-area {
-    -fx-background-color: #2e2e3e;
-    -fx-background-radius: 10;
+    -fx-background-color: rgba(39, 39, 39, 0.8);
     -fx-padding: 10;
+    -fx-background-radius: 10;
     -fx-text-fill: white;
 }
+
 

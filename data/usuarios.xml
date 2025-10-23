@@ -7,8 +7,8 @@
         <nombreCompleto>Administrador</nombreCompleto>
         <email>admin@example.com</email>
         <fechaRegistro>2025-10-16T20:25:12.5139019</fechaRegistro>
-        <ultimaSesion>2025-10-17T19:22:07.8219582</ultimaSesion>
-        <fotoPath>/assets/default-avatar.png</fotoPath>
+        <ultimaSesion>2025-10-23T12:43:37.3159393</ultimaSesion>
+        <fotoPath>C:\Users\pedro\Desktop\2DAM\AD\ProyectoAplicacionMensajes\src\main\resources\uploads\user_633d4ca4-e5ee-48c7-8f7f-a968e7aae634_1761044640426.jpeg</fotoPath>
     </usuario>
     <usuario>
         <id>ea0f54b5-1a01-4e8f-a941-d6dd61cf7691</id>
@@ -18,6 +18,26 @@
         <email>pedro@gmail.com</email>
         <fechaRegistro>2025-10-16T20:25:36.2270062</fechaRegistro>
         <ultimaSesion>2025-10-17T19:11:00.333581</ultimaSesion>
-        <fotoPath>/assets/default-avatar.png</fotoPath>
+        <fotoPath>C:\Users\pedro\Desktop\2DAM\AD\ProyectoAplicacionMensajes\src\main\resources\uploads\user_ea0f54b5-1a01-4e8f-a941-d6dd61cf7691_1761044676452.jpg</fotoPath>
+    </usuario>
+    <usuario>
+        <id>d8401a03-d8ec-46e8-81cf-f162c3fe595b</id>
+        <username>Antonio22</username>
+        <password>1234</password>
+        <nombreCompleto>Antonio Luque</nombreCompleto>
+        <email>Antonio@gmail.com</email>
+        <fechaRegistro>2025-10-19T19:12:27.6115032</fechaRegistro>
+        <ultimaSesion>2025-10-19T19:15:50.8840397</ultimaSesion>
+        <fotoPath></fotoPath>
+    </usuario>
+    <usuario>
+        <id>26fcdb02-c29b-4371-9101-4ae4761d70d8</id>
+        <username>Dylan05</username>
+        <password>1234</password>
+        <nombreCompleto>Dylan Abad</nombreCompleto>
+        <email>Dylan@gmail.com</email>
+        <fechaRegistro>2025-10-19T19:16:50.2604558</fechaRegistro>
+        <ultimaSesion>2025-10-21T10:04:01.8594731</ultimaSesion>
+        <fotoPath></fotoPath>
     </usuario>
 </usuarios>

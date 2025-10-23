@@ -6,6 +6,7 @@
         <destinatario>admin</destinatario>
         <texto>hola</texto>
         <timestamp>2025-10-17T19:03:43.3470728</timestamp>
+        <tamanoAdjunto>0</tamanoAdjunto>
     </mensaje>
     <mensaje>
         <id>895c6f35-6e1d-465a-a889-a377de19d3ef</id>
@@ -13,6 +14,7 @@
         <destinatario>Pedroo</destinatario>
         <texto>¡hola!</texto>
         <timestamp>2025-10-17T19:04:23.2982162</timestamp>
+        <tamanoAdjunto>0</tamanoAdjunto>
     </mensaje>
     <mensaje>
         <id>46079891-bf05-41fc-bf26-722f5c89347e</id>
@@ -20,6 +22,7 @@
         <destinatario>admin</destinatario>
         <texto>hola :)</texto>
         <timestamp>2025-10-17T19:05:52.6397751</timestamp>
+        <tamanoAdjunto>0</tamanoAdjunto>
     </mensaje>
     <mensaje>
         <id>72c7e881-24a8-480f-8865-db65b470f272</id>
@@ -27,6 +30,7 @@
         <destinatario>admin</destinatario>
         <texto>prueba</texto>
         <timestamp>2025-10-17T19:22:28.6130312</timestamp>
+        <tamanoAdjunto>0</tamanoAdjunto>
     </mensaje>
     <mensaje>
         <id>bc986a56-32af-4a5d-b187-c0a23e802363</id>
@@ -34,5 +38,85 @@
         <destinatario>Pedroo</destinatario>
         <texto>prueba</texto>
         <timestamp>2025-10-17T19:22:41.5167798</timestamp>
+        <tamanoAdjunto>0</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>4fc176ee-7863-484b-a65f-e352c15703ca</id>
+        <remitente>admin</remitente>
+        <destinatario>admin</destinatario>
+        <texto>prueba2</texto>
+        <timestamp>2025-10-17T19:49:05.1814502</timestamp>
+        <tamanoAdjunto>0</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>df187c2a-85d3-4fda-ae17-8120ebe84b94</id>
+        <remitente>admin</remitente>
+        <destinatario>admin</destinatario>
+        <texto>prueba3</texto>
+        <timestamp>2025-10-17T19:59:27.1492749</timestamp>
+        <tamanoAdjunto>0</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>c40a52d8-e2a2-4c5c-9fb9-43109ff3179c</id>
+        <remitente>admin</remitente>
+        <destinatario>Pedroo</destinatario>
+        <texto>(Archivo adjunto)</texto>
+        <timestamp>2025-10-19T20:53:41.4532498</timestamp>
+        <rutaAdjunto>media\006c89b8-31ca-47cc-a96b-24471e7f56ae.jpg</rutaAdjunto>
+        <nombreAdjunto>5963fcccc79ad0a52df2fd9cf1af5df5.jpg</nombreAdjunto>
+        <tipoAdjunto>image/jpeg</tipoAdjunto>
+        <tamanoAdjunto>32890</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>e88a816f-4777-4f5d-a749-87298a882324</id>
+        <remitente>admin</remitente>
+        <destinatario>admin</destinatario>
+        <texto>(Archivo adjunto)</texto>
+        <timestamp>2025-10-19T21:00:52.1754612</timestamp>
+        <rutaAdjunto>media\11952fb5-fdcf-42f7-92a6-e59f2c071d07.jpg</rutaAdjunto>
+        <nombreAdjunto>cc706f4fcad548ba1071d2913fcf15fd.jpg</nombreAdjunto>
+        <tipoAdjunto>image/jpeg</tipoAdjunto>
+        <tamanoAdjunto>29614</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>ba8281ab-174f-46f8-816a-9a588e68ff1e</id>
+        <remitente>admin</remitente>
+        <destinatario>admin</destinatario>
+        <texto>(Archivo adjunto)</texto>
+        <timestamp>2025-10-19T21:04:16.2683313</timestamp>
+        <rutaAdjunto>media\5a12edea-06ee-4f40-974c-d5107ff0caeb.jpg</rutaAdjunto>
+        <nombreAdjunto>09d80e0222ebe6ae892f6c80a71e8d7d.jpg</nombreAdjunto>
+        <tipoAdjunto>image/jpeg</tipoAdjunto>
+        <tamanoAdjunto>19770</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>fc8f5539-160d-467e-a1bd-25011208ab9b</id>
+        <remitente>admin</remitente>
+        <destinatario>admin</destinatario>
+        <texto></texto>
+        <timestamp>2025-10-19T21:05:58.7754461</timestamp>
+        <rutaAdjunto>media\7e2b8475-6aca-4156-8de4-5eeea4202739.jpg</rutaAdjunto>
+        <nombreAdjunto>eb1f389b17dd0b2dc803e76227281eeb.jpg</nombreAdjunto>
+        <tipoAdjunto>image/jpeg</tipoAdjunto>
+        <tamanoAdjunto>163580</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>50e443a7-5854-4bbc-869d-d69c702bfd48</id>
+        <remitente>admin</remitente>
+        <destinatario>admin</destinatario>
+        <texto></texto>
+        <timestamp>2025-10-19T21:06:36.2049555</timestamp>
+        <rutaAdjunto>media\c5672288-b232-47eb-94c9-f8cb3b633509.jpg</rutaAdjunto>
+        <nombreAdjunto>ec8f3c35bcba82597d0328605f0812ba.jpg</nombreAdjunto>
+        <tipoAdjunto>image/jpeg</tipoAdjunto>
+        <tamanoAdjunto>32114</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>7610cc49-94a9-4433-8837-f9f72397f641</id>
+        <remitente>admin</remitente>
+        <destinatario>admin</destinatario>
+        <texto>hola</texto>
+        <timestamp>2025-10-19T21:06:41.9583473</timestamp>
+        <tamanoAdjunto>0</tamanoAdjunto>
     </mensaje>
 </conversaciones>

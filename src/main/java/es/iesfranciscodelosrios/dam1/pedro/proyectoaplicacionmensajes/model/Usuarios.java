@@ -42,4 +42,13 @@ public class Usuarios {
                 "listaUsuarios=" + listaUsuarios +
                 '}';
     }
+
+    public void actualizarUsuario(Usuario usuario) {
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i).getUsername().equalsIgnoreCase(usuario.getUsername())) {
+                listaUsuarios.set(i, usuario);
+                return;
+            }
+        }
+    }
 }

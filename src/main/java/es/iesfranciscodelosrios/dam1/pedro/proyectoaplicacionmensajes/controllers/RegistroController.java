@@ -2,6 +2,7 @@ package es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.controlle
 
 import es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.model.Usuario;
 import es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.persistence.UsuarioRepository;
+import es.iesfranciscodelosrios.dam1.pedro.proyectoaplicacionmensajes.utils.ScreenUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -45,21 +46,23 @@ public class RegistroController {
     private void abrirPantallaPrincipal(Usuario usuario) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(
-                    "/es/iesfranciscodelosrios/dam1/pedro/proyectoaplicacionmensajes/ui/main-view.fxml"));
+                "/es/iesfranciscodelosrios/dam1/pedro/proyectoaplicacionmensajes/ui/main-view.fxml"));
             Scene scene = new Scene(loader.load());
 
+            // Aplicar estilos
             scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
             scene.getStylesheets().add(getClass().getResource(
-                    "/es/iesfranciscodelosrios/dam1/pedro/proyectoaplicacionmensajes/ui/styles.css"
+                "/es/iesfranciscodelosrios/dam1/pedro/proyectoaplicacionmensajes/ui/styles.css"
             ).toExternalForm());
 
-
+            // Configurar el controlador
             MainController controller = loader.getController();
             controller.setUsuarioActual(usuario);
 
+            // Configurar pantalla completa
             Stage stage = (Stage) txtUsername.getScene().getWindow();
-            stage.setScene(scene);
             stage.setTitle("Chat - " + usuario.getUsername());
+            ScreenUtils.setupFullScreen(stage, scene);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,16 +72,20 @@ public class RegistroController {
     @FXML
     private void volverLogin() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/es/iesfranciscodelosrios/dam1/pedro/proyectoaplicacionmensajes/ui/login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(
+                "/es/iesfranciscodelosrios/dam1/pedro/proyectoaplicacionmensajes/ui/login.fxml"));
             Scene scene = new Scene(loader.load());
 
+            // Aplicar estilos
             scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css");
             scene.getStylesheets().add(getClass().getResource(
-                    "/es/iesfranciscodelosrios/dam1/pedro/proyectoaplicacionmensajes/ui/styles.css"
+                "/es/iesfranciscodelosrios/dam1/pedro/proyectoaplicacionmensajes/ui/styles.css"
             ).toExternalForm());
 
+            // Configurar pantalla completa
             Stage stage = (Stage) txtUsername.getScene().getWindow();
-            stage.setScene(scene);
+            stage.setTitle("Inicio de Sesión");
+            ScreenUtils.setupFullScreen(stage, scene);
         } catch (Exception e) {
             e.printStackTrace();
         }
