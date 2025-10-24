@@ -57,6 +57,9 @@ public class MainController {
     private final MensajesRepository mensajesRepo = new MensajesRepository();
     private Usuario usuarioActual; // El usuario logueado
 
+    /**
+     * Inicializa la lista de usuarios y configura la celda para mostrar la información de cada usuario.
+     */
     @FXML
     public void initialize() {
         listaUsuarios.setItems(FXCollections.observableArrayList(repo.leerUsuarios().getListaUsuarios()));
@@ -82,6 +85,11 @@ public class MainController {
                 content.setAlignment(Pos.CENTER_LEFT);
             }
 
+            /**
+             * Actualiza la celda de la lista de usuarios con la información del usuario.
+             * @param usuario El usuario a mostrar en la celda.
+             * @param empty Indica si la celda está vacía.
+             */
             @Override
             protected void updateItem(Usuario usuario, boolean empty) {
                 super.updateItem(usuario, empty);
@@ -134,6 +142,12 @@ public class MainController {
         });
     }
 
+    /**
+     * Establece el usuario actual en la interfaz de usuario.
+     * Muestra la información del usuario actual en el panel derecho.
+     * Carga la imagen de perfil del usuario actual.
+     * @param usuario El usuario actual.
+     */
     public void setUsuarioActual(Usuario usuario) {
         this.usuarioActual = usuario;
         lblNombreUsuario.setText("Nombre: " + usuario.getNombreCompleto());
@@ -187,6 +201,11 @@ public class MainController {
         }
     }
 
+    /**
+     * Muestra la información del usuario seleccionado en el panel derecho.
+     *
+     * @param usuarioSeleccionado El usuario seleccionado.
+     */
     private void mostrarInfoUsuario(Usuario usuarioSeleccionado) {
         // Mostrar información del usuario seleccionado en el panel derecho
         lblTituloPanelDerecho.setText("Perfil de " + usuarioSeleccionado.getUsername());
@@ -297,6 +316,11 @@ public class MainController {
         }
     }
 
+    /**
+     * Carga la imagen de perfil del usuario seleccionado.
+     *
+     * @param usuarioSeleccionado El usuario seleccionado.
+     */
     private void cargarImagenPerfil(Usuario usuarioSeleccionado) {
         try {
             Image img;
@@ -328,6 +352,10 @@ public class MainController {
         }
     }
 
+    /**
+     * Maneja el evento de enviar un mensaje a un usuario.
+     * @param destinatario El usuario destinatario del mensaje.
+     */
     private void handleEnviarMensaje(Usuario destinatario) {
         String texto = txtMensaje.getText().trim();
         if (texto.isEmpty() || destinatario == null) return;
@@ -338,6 +366,10 @@ public class MainController {
         txtMensaje.clear();
     }
 
+    /**
+     * Muestra un mensaje en el chat.
+     * @param m El mensaje a mostrar.
+     */
     private void mostrarMensajeEnChat(Mensaje m) {
         boolean esPropio = m.getRemitente().equals(usuarioActual.getUsername());
         
@@ -465,6 +497,11 @@ public class MainController {
 
     }
 
+
+    /**
+     * Muestra un resumen de la conversación con un usuario.
+     * @param usuarioDestino El usuario con el que se va a mostrar la conversación.
+     */
     private void mostrarResumenConversacion(Usuario usuarioDestino) {
         var mensajes = mensajesRepo.obtenerConversacion(usuarioActual.getUsername(), usuarioDestino.getUsername());
 
@@ -508,6 +545,10 @@ public class MainController {
         boxResumen.setManaged(true);
     }
 
+    /**
+     * Exporta la conversación con un usuario a un archivo CSV en el escritorio del usuario.
+     * @param usuarioDestino El usuario con el que se va a exportar la conversación.
+     */
     private void exportarConversacion(Usuario usuarioDestino) {
         try {
             var mensajes = mensajesRepo.obtenerConversacion(usuarioActual.getUsername(), usuarioDestino.getUsername());
@@ -544,8 +585,12 @@ public class MainController {
     }
 
 
-     // Muestra un diálogo para elegir entre exportar conversación en CSV o en ZIP (con adjuntos).
 
+
+    /**
+     * Muestra un diálogo para elegir entre exportar conversación en CSV o en ZIP (con adjuntos).
+     * @param usuarioDestino El usuario con el que se va a exportar la conversación.
+     */
     private void mostrarDialogoExportacion(Usuario usuarioDestino) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Exportar conversación");
@@ -568,8 +613,11 @@ public class MainController {
     }
 
 
-     // Exporta la conversación a un archivo ZIP con los mensajes y los adjuntos.
-
+    /**
+     * Exporta la conversación con un usuario a un archivo ZIP en el escritorio del usuario,
+     * incluyendo los mensajes en CSV y los archivos adjuntos.
+     * @param usuarioDestino El usuario con el que se va a exportar la conversación.
+     */
     private void exportarConversacionZIP(Usuario usuarioDestino) {
         try {
             var mensajes = mensajesRepo.obtenerConversacion(usuarioActual.getUsername(), usuarioDestino.getUsername());
@@ -639,7 +687,12 @@ public class MainController {
         }
     }
 
-
+    /**
+     * Muestra una alerta con el título, mensaje y tipo especificados.
+     * @param titulo El título de la alerta.
+     * @param mensaje El mensaje de la alerta.
+     * @param tipo El tipo de alerta (INFORMATION, WARNING, ERROR, etc.).
+     */
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
         Alert alert = new Alert(tipo);
         alert.setTitle(titulo);
@@ -648,6 +701,10 @@ public class MainController {
         alert.showAndWait();
     }
 
+    /**
+     * Permite al usuario adjuntar un archivo a la conversación con otro usuario.
+     * @param usuarioDestino El usuario destinatario del archivo adjunto.
+     */
     private void adjuntarArchivo(Usuario usuarioDestino) {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Seleccionar archivo adjunto");
@@ -700,6 +757,7 @@ public class MainController {
     }
 
 
+
     @FXML
     private void handleAgregarContacto() {
         System.out.println("Función 'Agregar contacto' en desarrollo.");
@@ -712,7 +770,12 @@ public class MainController {
     private void refrescarListaUsuarios() {
         listaUsuarios.setItems(FXCollections.observableArrayList(repo.leerUsuarios().getListaUsuarios()));
     }
-    
+
+    /**
+     * Maneja el evento de cambiar la foto de perfil del usuario actual.
+     * Permite seleccionar una imagen desde el sistema de archivos,
+     * la guarda en la carpeta de uploads y actualiza la base de datos.
+     */
     @FXML
     private void handleCambiarFoto() {
         try {
@@ -773,7 +836,11 @@ public class MainController {
             e.printStackTrace();
         }
     }
-    
+
+    /**
+     * funcion para el boton simple de volver al menú principal desde el chat.
+     * Limpia la selección de la lista de usuarios y muestra la información del usuario actual.
+     */
     @FXML
     private void volverAlMenu() {
         // Limpiar la selección de la lista de usuarios primero
@@ -825,7 +892,11 @@ public class MainController {
         // Cargar la imagen de perfil del usuario actual
         cargarImagenPerfil(usuarioActual);
     }
-    
+
+    /**
+     * Maneja el evento de cerrar sesión.
+     * Muestra un diálogo de confirmación antes de cerrar la aplicación.
+     */
     @FXML
     private void handleCerrarSesion() {
         try {

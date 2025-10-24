@@ -119,4 +119,34 @@
         <timestamp>2025-10-19T21:06:41.9583473</timestamp>
         <tamanoAdjunto>0</tamanoAdjunto>
     </mensaje>
+    <mensaje>
+        <id>f06b60e8-a67f-4fd7-b890-14d5a556a222</id>
+        <remitente>admin</remitente>
+        <destinatario>Pedroo</destinatario>
+        <texto>.</texto>
+        <timestamp>2025-10-23T14:52:46.9370333</timestamp>
+        <tamanoAdjunto>0</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>487bf139-cc05-400e-8294-9092f483c29f</id>
+        <remitente>admin</remitente>
+        <destinatario>Pedroo</destinatario>
+        <texto></texto>
+        <timestamp>2025-10-23T14:53:20.1113851</timestamp>
+        <rutaAdjunto>media\83d2a4b9-313c-4566-a238-703d5dcffe3e.jpg</rutaAdjunto>
+        <nombreAdjunto>5963fcccc79ad0a52df2fd9cf1af5df5.jpg</nombreAdjunto>
+        <tipoAdjunto>image/jpeg</tipoAdjunto>
+        <tamanoAdjunto>32890</tamanoAdjunto>
+    </mensaje>
+    <mensaje>
+        <id>614e1213-60af-4157-9288-7cad2b19f7de</id>
+        <remitente>admin</remitente>
+        <destinatario>Pedroo</destinatario>
+        <texto></texto>
+        <timestamp>2025-10-23T14:53:34.8564894</timestamp>
+        <rutaAdjunto>media\17395019-e364-47a4-9e08-8cf910a1cc90.pdf</rutaAdjunto>
+        <nombreAdjunto>B2_UD02_RA2_PMDM_2DAM_25_26 (2).pdf</nombreAdjunto>
+        <tipoAdjunto>application/pdf</tipoAdjunto>
+        <tamanoAdjunto>120058</tamanoAdjunto>
+    </mensaje>
 </conversaciones>

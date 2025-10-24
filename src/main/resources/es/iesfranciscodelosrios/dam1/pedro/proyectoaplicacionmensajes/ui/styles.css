@@ -36,6 +36,7 @@
 
 .form-control:focused {
     -fx-border-color: #4CAF50;
+    -fx-border-radius: 10;
     -fx-background-color: #444;
 }
 
@@ -49,6 +50,7 @@
 
 .btn-success:hover {
     -fx-background-color: #5dd165;
+    -fx-effect: dropshadow(gaussian, rgb(98, 255, 79), 10, 0, 0, 0);
 }
 
 .btn-danger {
@@ -60,6 +62,15 @@
 
 .btn-danger:hover {
     -fx-background-color: #d32f2f;
+    -fx-effect: dropshadow(gaussian, rgb(255, 0, 0), 10, 0, 0, 0);
+
+}
+
+.btn-volvermenu {
+    -fx-background-color: #27ba16;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
 }
 
 
@@ -115,6 +126,7 @@
     -fx-padding: 10;
     -fx-background-radius: 10;
     -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.15), 10, 0, 0, 0);
 }
 
 

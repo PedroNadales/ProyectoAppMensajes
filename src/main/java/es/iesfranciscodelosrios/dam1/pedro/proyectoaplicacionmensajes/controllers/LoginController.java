@@ -24,6 +24,11 @@ public class LoginController {
 
     private final UsuarioRepository usuarioRepo = new UsuarioRepository();
 
+    /**
+     * Inicializa el controlador de la pantalla de login.
+     * Establece la imagen del logo y permite hacer clic en el enlace
+     * "¿No tienes una cuenta?" para abrir la pantalla de registro.
+     */
     @FXML
     public void initialize() {
         // Cargar imagen desde classpath
@@ -33,6 +38,12 @@ public class LoginController {
         lblcrearcuenta.setOnMouseClicked(event -> abrirRegistro());
     }
 
+    /**
+     * Abre la pantalla de registro de usuario.
+     * Carga la pantalla de registro desde el archivo FXML y aplica los estilos CSS
+     * correspondientes. Configura la pantalla completa y establece el título de la pantalla
+     * como "Registro de Usuario".
+     */
     private void abrirRegistro() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(
@@ -54,6 +65,13 @@ public class LoginController {
         }
     }
 
+    /**
+     * Maneja el evento de inicio de sesión.
+     * Valida los campos de usuario y contraseña, y si están vacíos, muestra un mensaje de alerta.
+     * Si los campos son válidos, verifica la autenticidad del usuario y contraseña.
+     * Si la autenticidad es válida, actualiza la última sesión del usuario y abre la pantalla principal.
+     * Si la autenticidad es inválida, muestra un mensaje de error.
+     */
     @FXML
     private void handleLogin() {
         String user = txtUsuario.getText().trim();
@@ -74,6 +92,13 @@ public class LoginController {
         }
     }
 
+    /**
+     * Abre la pantalla principal de la aplicación.
+     * Carga la pantalla principal desde el archivo FXML y aplica los estilos CSS
+     * correspondientes. Configura la pantalla completa y establece el título de la pantalla
+     * como "Chat - [nombre_usuario]" con el nombre del usuario actual.
+     * @param usuario El usuario actual que se va a mostrar en la pantalla principal.
+     */
     private void abrirPantallaPrincipal(Usuario usuario) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(
@@ -100,6 +125,13 @@ public class LoginController {
     }
 
 
+    /**
+     * Muestra un diálogo de alerta con un título y un mensaje.
+     * El diálogo se muestra con un tipo de alerta determinado por el parámetro type.
+     * @param title El título del diálogo
+     * @param msg El mensaje del diálogo
+     * @param type El tipo de alerta (INFORMATION, WARNING, ERROR)
+     */
     private void showAlert(String title, String msg, Alert.AlertType type) {
         Alert alert = new Alert(type);
         alert.setTitle(title);

@@ -17,24 +17,43 @@ public class Usuarios {
     public Usuarios() {
     }
 
+    /**
+     * Devuelve la lista de usuarios.
+     * @return Devuelve la lista de usuarios.
+     */
     public List<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
 
+
+    /**
+     * Establece la lista de usuarios.
+     * @param listaUsuarios La lista de usuarios a establecer.
+     */
     public void setListaUsuarios(List<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
 
+    /**
+     * Agrega un usuario a la lista de usuarios.
+     * @param usuario El usuario a agregar.
+     */
     public void addUsuario(Usuario usuario) {
         listaUsuarios.add(usuario);
     }
 
+    /**
+     * Busca un usuario por su nombre de usuario.
+     * @param username El nombre de usuario a buscar.
+     * @return El usuario encontrado o null si no se encuentra.
+     */
     public Usuario buscarPorUsername(String username) {
         return listaUsuarios.stream()
                 .filter(u -> u.getUsername().equalsIgnoreCase(username))
                 .findFirst()
                 .orElse(null);
     }
+
 
     @Override
     public String toString() {
@@ -43,6 +62,10 @@ public class Usuarios {
                 '}';
     }
 
+    /**
+     * Actualiza un usuario en la lista de usuarios.
+     * @param usuario El usuario a actualizar.
+     */
     public void actualizarUsuario(Usuario usuario) {
         for (int i = 0; i < listaUsuarios.size(); i++) {
             if (listaUsuarios.get(i).getUsername().equalsIgnoreCase(usuario.getUsername())) {

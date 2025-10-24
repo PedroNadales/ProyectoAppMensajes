@@ -14,6 +14,21 @@ import javafx.animation.PauseTransition;
 import javafx.util.Duration;
 
 public class MainApplication extends Application {
+
+    /**
+     * Inicializa la aplicaci n.
+     *
+     * <p>
+     * Este metodo carga el archivo FXML desde el paquete ui y configura la pantalla
+     * completa para el Stage correspondiente. A continuacion, carga BootstrapFX y CSS,
+     * aplica estilos personalizados al mensaje de pantalla completa y configura la
+     * pantalla completa. Por ultimo, crea y configura un mensaje personalizado y lo
+     * añade a la escena correspondiente.
+     *
+     * @param stage El Stage que se configurar .
+     * @throws Exception si se produce un error al cargar el archivo FXML.
+     */
+
     @Override
     public void start(Stage stage) throws Exception {
 

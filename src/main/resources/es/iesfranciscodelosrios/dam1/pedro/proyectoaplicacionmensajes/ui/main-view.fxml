@@ -78,15 +78,10 @@
                 <Label fx:id="lblUltimaSesion" styleClass="sidebar-right" text="Última sesión: " />
 
                 <Separator prefWidth="200" />
-                <Button fx:id="btnResumen" text="Ver resumen"
-                        style="-fx-background-color: #27ba16; -fx-text-fill: white; -fx-font-weight: bold;"
+                <Button fx:id="btnResumen" text="Ver resumen" styleClass="btn-success"
                         prefWidth="150" />
-                <VBox fx:id="boxResumen" spacing="5" visible="false" managed="false"
-                      style="-fx-background-color: rgba(255,255,255,0.84); -fx-padding: 10; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #27ba16;" />
-
-                <Button fx:id="btnExportar" text="Exportar conversación"
-                        style="-fx-background-color: #27ba16; -fx-text-fill: white; -fx-font-weight: bold;"
-                        prefWidth="200" />
+                <VBox fx:id="boxResumen" spacing="5" visible="false" managed="false" styleClass="login-box" />
+                <Button fx:id="btnExportar" text="Exportar conversación" styleClass="btn-success" />
                 <!-- Botón de volver al menú (esquina inferior derecha) -->
                     <HBox alignment="BOTTOM_RIGHT" spacing="10">
                         <padding>

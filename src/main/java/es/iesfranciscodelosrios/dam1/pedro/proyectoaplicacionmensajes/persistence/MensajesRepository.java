@@ -16,6 +16,10 @@ public class MensajesRepository {
 
     private static final Path XML_PATH = Path.of("data/conversaciones.xml");
 
+    /**
+     * Constructor de la clase MensajesRepository.
+     * Crea el archivo XML si no existe y lo inicializa con un objeto Conversaciones vacío.
+     */
     public MensajesRepository() {
         try {
             if (!Files.exists(XML_PATH)) {
@@ -27,6 +31,12 @@ public class MensajesRepository {
         }
     }
 
+    /**
+     * Lee la conversación completa desde el archivo XML.
+     * Si el archivo no existe o está vacío, devuelve un objeto Conversaciones vacío.
+     * Si hay error al leer, devuelve un objeto Conversaciones vacío y muestra un mensaje de error.
+     * @return La conversación completa leída desde el archivo XML.
+     */
     public Conversaciones leerTodas() {
         try {
             if (!Files.exists(XML_PATH) || Files.size(XML_PATH) == 0) {
@@ -52,6 +62,10 @@ public class MensajesRepository {
         }
     }
 
+    /**
+     * Guarda la conversación completa en el archivo XML.
+     * @param conv La conversación completa a guardar.
+     */
     public synchronized void guardarConversaciones(Conversaciones conv) {
         try {
             if (conv == null) conv = new Conversaciones();
@@ -72,13 +86,24 @@ public class MensajesRepository {
         }
     }
 
+    /**
+     * Agrega un mensaje a la conversación y lo guarda en el archivo XML.
+     * @param m El mensaje a agregar.
+     */
     public synchronized void agregarMensaje(Mensaje m) {
         Conversaciones conv = leerTodas();
         conv.addMensaje(m);
         guardarConversaciones(conv);
     }
 
-    // Recupera la conversación entre dos usuarios (ordenada por timestamp en ascendente)
+
+    /**
+     * Obtiene la conversación entre dos usuarios.
+     * Filtra los mensajes entre los usuarios a y b, y los ordena por marca de tiempo en orden ascendente.
+     * @param a El nombre de usuario del primer participante.
+     * @param b El nombre de usuario del segundo participante.
+     * @return La lista de mensajes entre los dos usuarios, ordenada por marca de tiempo.
+     */
     public List<Mensaje> obtenerConversacion(String a, String b) {
         return leerTodas().getMensajes().stream()
                 .filter(m -> (m.getRemitente().equalsIgnoreCase(a) && m.getDestinatario().equalsIgnoreCase(b)) ||

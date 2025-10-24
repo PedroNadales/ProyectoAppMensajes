@@ -18,14 +18,26 @@ public class Conversaciones {
     public Conversaciones() {
     }
 
+    /**
+     * Devuelve la lista de mensajes en la conversación.
+     * @return La lista de mensajes en la conversación.
+     */
     public List<Mensaje> getMensajes() {
         return mensajes;
     }
 
+    /**
+     * Establece la lista de mensajes en la conversación.
+     * @param mensajes La lista de mensajes a establecer.
+     */
     public void setMensajes(List<Mensaje> mensajes) {
         this.mensajes = mensajes;
     }
 
+    /**
+     * Agrega un mensaje a la conversación.
+     * @param m El mensaje a agregar.
+     */
     public void addMensaje(Mensaje m) {
         mensajes.add(m);
     }

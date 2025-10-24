@@ -18,6 +18,13 @@ public class RegistroController {
 
     private final UsuarioRepository usuarioRepo = new UsuarioRepository();
 
+    /**
+     * Maneja el evento de registro de un usuario.
+     * Valida los campos de usuario, contraseña, nombre completo y correo electrónico.
+     * Si los campos son válidos, crea un nuevo usuario y lo agrega a la base de datos.
+     * Si el nombre de usuario ya existe, muestra un mensaje de error.
+     * Si el registro es exitoso, muestra un mensaje de confirmación y abre la pantalla principal con el nuevo usuario.
+     */
     @FXML
     private void handleRegistro() {
         String username = txtUsername.getText().trim();
@@ -43,6 +50,13 @@ public class RegistroController {
 
     }
 
+    /**
+     * Abre la pantalla principal de la aplicación con el usuario actual.
+     * Carga la pantalla principal desde el archivo FXML y aplica los estilos CSS
+     * correspondientes. Configura la pantalla completa y establece el título de la pantalla
+     * como "Chat - [nombre_usuario]" con el nombre del usuario actual.
+     * @param usuario El usuario actual que se va a mostrar en la pantalla principal.
+     */
     private void abrirPantallaPrincipal(Usuario usuario) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(
@@ -69,6 +83,12 @@ public class RegistroController {
     }
 
 
+    /**
+     * Vuelve a la pantalla de inicio de sesión.
+     * Carga la pantalla de inicio de sesión desde el archivo FXML y aplica los estilos CSS
+     * correspondientes. Configura la pantalla completa y establece el título de la pantalla
+     * como "Inicio de Sesión".
+     */
     @FXML
     private void volverLogin() {
         try {
@@ -91,6 +111,13 @@ public class RegistroController {
         }
     }
 
+    /**
+     * Muestra un diálogo de alerta con un título y un mensaje.
+     * El diálogo se muestra con un tipo de alerta determinado por el parámetro type.
+     * @param title El título del diálogo
+     * @param msg El mensaje del diálogo
+     * @param type El tipo de alerta (INFORMATION, WARNING, ERROR)
+     */
     private void showAlert(String title, String msg, Alert.AlertType type) {
         Alert alert = new Alert(type);
         alert.setTitle(title);
