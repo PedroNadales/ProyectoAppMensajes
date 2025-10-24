@@ -36,6 +36,12 @@ public class RegistroController {
             showAlert("Error", "Todos los campos son obligatorios", Alert.AlertType.WARNING);
             return;
         }
+        
+        // Validar formato de correo electrónico
+        if (!email.matches("^[^@]+@[^@]+\\.[^@]+$")) {
+            showAlert("Error", "El formato del correo electrónico no es válido. Debe contener '@' y un dominio válido (ejemplo@dominio.com)", Alert.AlertType.WARNING);
+            return;
+        }
 
         if (usuarioRepo.buscarUsuario(username) != null) {
             showAlert("Error", "El nombre de usuario ya existe", Alert.AlertType.ERROR);

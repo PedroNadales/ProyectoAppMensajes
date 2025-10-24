@@ -49,7 +49,7 @@ public class Usuarios {
      */
     public Usuario buscarPorUsername(String username) {
         return listaUsuarios.stream()
-                .filter(u -> u.getUsername().equalsIgnoreCase(username))
+                .filter(u -> u.getUsername().equals(username))
                 .findFirst()
                 .orElse(null);
     }
