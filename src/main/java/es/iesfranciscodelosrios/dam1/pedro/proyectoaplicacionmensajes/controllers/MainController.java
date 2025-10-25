@@ -509,7 +509,7 @@ public class MainController {
 
         if (mensajes.isEmpty()) {
             Label lblVacio = new Label("No hay mensajes en esta conversación.");
-            lblVacio.setStyle("-fx-text-fill: #000000; -fx-font-style: italic;");
+            lblVacio.setStyle("-fx-text-fill: #ffffff; -fx-font-style: italic;");
             boxResumen.getChildren().add(lblVacio);
         } else {
             // Calcular resumen con Streams
@@ -532,11 +532,14 @@ public class MainController {
                     .orElse("Ninguna");
 
             Label lblTitulo = new Label("Resumen de conversación");
-            lblTitulo.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
+            lblTitulo.setStyle("-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #1bff00;");
 
             Label lblTotal = new Label("Total de mensajes: " + totalMensajes);
+            lblTotal.setStyle("-fx-text-fill: #ffffff;");
             Label lblPorUsuario = new Label("Por usuario: " + mensajesPorUsuario);
+            lblPorUsuario.setStyle("-fx-text-fill: #ffffff;");
             Label lblPalabra = new Label("Palabra más usada: " + palabraMasFrecuente);
+            lblPalabra.setStyle("-fx-text-fill: #ffffff;");
 
             boxResumen.getChildren().addAll(lblTitulo, lblTotal, lblPorUsuario, lblPalabra);
         }
